@@ -35,6 +35,21 @@ function initializeDatabase() {
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
             FOREIGN KEY (vehicle_id) REFERENCES vehicles(id) ON DELETE CASCADE
         );
+
+        CREATE TABLE IF NOT EXISTS cars (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            brand TEXT NOT NULL,
+            model TEXT NOT NULL,
+            year INTEGER NOT NULL,
+            price REAL NOT NULL,
+            fuelType TEXT NOT NULL,
+            transmission TEXT NOT NULL,
+            kilometersDriven INTEGER DEFAULT 0,
+            color TEXT,
+            description TEXT,
+            imageUrl TEXT,
+            created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        );
     `);
 
     console.log("SQLite database connected and tables ready.");

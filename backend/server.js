@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const { initializeDatabase } = require("./database/init");
 const authRoutes = require("./routes/authRoutes");
+const carRoutes = require("./routes/carRoutes");
 
 initializeDatabase();
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/cars", carRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
