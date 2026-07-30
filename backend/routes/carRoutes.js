@@ -4,7 +4,7 @@ const { authenticateToken, requireAdmin } = require("../middleware/authMiddlewar
 const { validateCreateCar, validateUpdateCar } = require("../middleware/validateCar");
 
 const router = express.Router();
-
+console.log("Car routes loaded");
 router.get("/", carController.getAllCars);
 router.get("/:id", carController.getCarById);
 router.post("/", authenticateToken, requireAdmin, validateCreateCar, carController.createCar);

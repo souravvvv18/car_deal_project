@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealership</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Car Dealership</p>
+                <h1>Test drives, bookings, and inventory in one place.</h1>
+            </div>
+            <nav class="nav">
+                <button data-view="login">Login</button>
+                <button data-view="register">Register</button>
+                <button data-view="cars">Car Listing</button>
+                <button data-view="details">Car Details</button>
+                <button data-view="booking">Book Test Drive</button>
+                <button data-view="dashboard">Admin Dashboard</button>
+            </nav>
+        </header>
+
+        <main class="content">
+            <section class="panel active" id="view-login">
+                <h2>Login</h2>
+                <form id="login-form" class="form-grid">
+                    <input name="email" type="email" placeholder="Email" required>
+                    <input name="password" type="password" placeholder="Password" required>
+                    <button type="submit">Sign in</button>
+                </form>
+            </section>
+
+            <section class="panel" id="view-register">
+                <h2>Register</h2>
+                <form id="register-form" class="form-grid">
+                    <input name="name" type="text" placeholder="Full name" required>
+                    <input name="email" type="email" placeholder="Email" required>
+                    <input name="password" type="password" placeholder="Password" required>
+                    <select name="role">
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <button type="submit">Create account</button>
+                </form>
+            </section>
+
+            <section class="panel" id="view-cars">
+                <div class="section-header">
+                    <h2>Car Listing</h2>
+                    <button id="refresh-cars">Refresh</button>
+                </div>
+                <div id="car-grid" class="grid"></div>
+            </section>
+
+            <section class="panel" id="view-details">
+                <h2>Car Details</h2>
+                <form id="car-search-form" class="form-inline">
+                    <input name="carId" type="number" min="1" placeholder="Car ID" required>
+                    <button type="submit">Load</button>
+                </form>
+                <article id="car-details" class="details-card muted">Select a car to view details.</article>
+            </section>
+
+            <section class="panel" id="view-booking">
+                <h2>Book Test Drive</h2>
+                <form id="booking-form" class="form-grid">
+                    <input name="carId" type="number" min="1" placeholder="Car ID" required>
+                    <input name="customerName" type="text" placeholder="Customer name" required>
+                    <input name="phone" type="tel" placeholder="Phone" required>
+                    <input name="preferredDate" type="date" required>
+                    <input name="preferredTime" type="time" required>
+                    <button type="submit">Book now</button>
+                </form>
+            </section>
+
+            <section class="panel" id="view-dashboard">
+                <div class="section-header">
+                    <h2>Admin Dashboard</h2>
+                    <button id="load-dashboard">Load bookings</button>
+                </div>
+                <div id="dashboard-summary" class="summary"></div>
+                <div id="booking-list" class="stack"></div>
+            </section>
+        </main>
+
+        <aside class="status-bar">
+            <div><strong>Token</strong><span id="token-state">Not signed in</span></div>
+            <div><strong>Message</strong><span id="app-message">Ready.</span></div>
+        </aside>
+    </div>
+</body>
+</html>

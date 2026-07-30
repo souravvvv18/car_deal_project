@@ -50,6 +50,20 @@ function initializeDatabase() {
             imageUrl TEXT,
             created_at TEXT NOT NULL DEFAULT (datetime('now'))
         );
+
+        CREATE TABLE IF NOT EXISTS bookings (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            userId INTEGER NOT NULL,
+            carId INTEGER NOT NULL,
+            customerName TEXT NOT NULL,
+            phone TEXT NOT NULL,
+            preferredDate TEXT NOT NULL,
+            preferredTime TEXT NOT NULL,
+            status TEXT NOT NULL DEFAULT 'Pending',
+            created_at TEXT NOT NULL DEFAULT (datetime('now')),
+            FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+            FOREIGN KEY (carId) REFERENCES cars(id) ON DELETE CASCADE
+        );
     `);
 
     console.log("SQLite database connected and tables ready.");
