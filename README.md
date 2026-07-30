@@ -189,12 +189,17 @@ Query filters supported by `GET /api/cars`:
 
 Add screenshots here after running the app:
 
-- Login page: `screenshots/login.png`
-- Register page: `screenshots/register.png`
-- Car listing: `screenshots/car-listing.png`
-- Car details: `screenshots/car-details.png`
-- Booking form: `screenshots/booking.png`
-- Admin dashboard: `screenshots/dashboard.png`
+- after Login interface page(actually it does not have pop up showing logged in succesfully ):![alt text](<Screenshot 2026-07-30 150305.png>)  
+
+- Register page: `screenshots/register.png` ![alt text](<Screenshot 2026-07-30 150217.png>)
+
+- Car listing:  ![alt text](<Screenshot 2026-07-30 195722.png>)
+
+- Car details: ![alt text](<Screenshot 2026-07-30 195736.png>)
+
+
+- Booking form:![alt text](<Screenshot 2026-07-30 195750-1.png>)
+- Admin dashboard: ![alt text](<Screenshot 2026-07-30 195839.png>)
 
 ## Notes
 
